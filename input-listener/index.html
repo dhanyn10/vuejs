@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../node_modules/vue/dist/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-on:input="changeText">
+            <span>{{textData}}</span>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    textData: "hello, this is vue application"
+                },
+                methods: {
+                    changeText: function(e)
+                    {
+                        this.textData = e.target.value;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
