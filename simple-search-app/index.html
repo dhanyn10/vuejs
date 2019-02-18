@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../node_modules/vue/dist/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="keyword" placeholder="search">
+            <div class="result" v-for="post in filteredlist">
+                <p>title: {{post.title}}</p>
+            </div>
+        </div>
+        <script>
+            class Post{
+                constructor(title)
+                {
+                    this.title = title;
+                }
+            }
+            new Vue({
+                el: '#app',
+                data: {
+                    keyword: '',
+                    postlist: [
+                        new Post('call of duty'),
+                        new Post('arena of valor'),
+                        new Post('age of empires')
+                    ]
+                },
+                computed: {
+                    filteredlist()
+                    {
+                        return this.postlist.filter((post)=>{
+                            return post.title.toLowerCase().includes(this.keyword.toLowerCase())
+                        });
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
