@@ -7,14 +7,26 @@
         <script src="../node_modules/vue/dist/vue.min.js"></script>
     </head>
     <body>
-        <div id="app">
+        <div id="app1">
             <p v-if="show">lorem ipsum</p>
+            <p>dolor sit amet</p>
+            <button @click="show = !show">Switch</button>
+        </div>
+        <div id="app2">
+            <p v-if="show">lorem ipsum</p>
+            <p v-else>from lorem</p>
             <p>dolor sit amet</p>
             <button @click="show = !show">Switch</button>
         </div>
         <script>
             new Vue({
-                el: '#app',
+                el: '#app1',
+                data: {
+                    show: true
+                }
+            });
+            new Vue({
+                el: '#app2',
                 data: {
                     show: true
                 }
