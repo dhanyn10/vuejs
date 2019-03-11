@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../node_modules/vue/dist/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>see your browser console</p>
+            <input type="text" v-on:keydown="typing">
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    counter: 0
+                },
+                methods: {
+                    typing: function(event)
+                    {
+                        this.counter++;
+                        console.log('typing : ' + this.counter);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
