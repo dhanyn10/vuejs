@@ -11,6 +11,11 @@
             <ul>
                 <li v-for="book in library">{{ book.title }} writen by {{ book.writer }}</li>
             </ul>
+            <ul>
+                <li v-for="book in library">
+                    <p v-for="(value, key) in book">{{ key }} : {{value}}</p>
+                </li>
+            </ul>
         </div>
         <script>
             new Vue({
