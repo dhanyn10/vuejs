@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../node_modules/vue/dist/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="book in library">{{ book.title }} writen by {{ book.writer }}</li>
+            </ul>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    library: [
+                        {
+                            title: 'Bumi Manusia',
+                            writer: 'Pramoedya'
+                        },
+                        {
+                            title: 'Sherlock Holmes',
+                            writer: 'Arthur Conan Doyle'
+                        }
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>
