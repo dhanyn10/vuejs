@@ -8,12 +8,20 @@
     </head>
     <body>
         <div id="app">
+            with specific value
             <ul>
                 <li v-for="book in library">{{ book.title }} writen by {{ book.writer }}</li>
             </ul>
+            looping through value
             <ul>
                 <li v-for="book in library">
-                    <p v-for="(value, key) in book">{{ key }} : {{value}}</p>
+                    <p v-for="(value, key) in book">{{ key }} : {{ value }}</p>
+                </li>
+            </ul>
+            looping with value index
+            <ul>
+                <li v-for="book in library">
+                    <p v-for="(value, key, index) in book">book No. {{ index }}  {{ key }} : {{ value }}</p>
                 </li>
             </ul>
         </div>
